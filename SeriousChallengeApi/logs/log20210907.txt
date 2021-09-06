@@ -1,0 +1,91 @@
+2021-09-07 00:07:24.474 +04:00 [INF] Starting up
+2021-09-07 00:07:25.723 +04:00 [INF] WeeklyUpdateSPY is started
+2021-09-07 00:07:26.077 +04:00 [INF] Start processing HTTP request GET "https://api.polygon.io/v2/aggs/ticker/SPY/range/1/day/8/30/2021/9/5/2021?apiKey=OrgNNJNl7CkI7W5UOdurGAMp0Ec1JENP"
+2021-09-07 00:07:26.086 +04:00 [INF] Sending HTTP request GET "https://api.polygon.io/v2/aggs/ticker/SPY/range/1/day/8/30/2021/9/5/2021?apiKey=OrgNNJNl7CkI7W5UOdurGAMp0Ec1JENP"
+2021-09-07 00:07:26.283 +04:00 [INF] Now listening on: http://localhost:5001
+2021-09-07 00:07:26.283 +04:00 [INF] Now listening on: http://localhost:5000
+2021-09-07 00:07:26.284 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-09-07 00:07:26.284 +04:00 [INF] Hosting environment: Development
+2021-09-07 00:07:26.284 +04:00 [INF] Content root path: D:\SeriousChallenge\SeriousChallengeApi
+2021-09-07 00:07:26.839 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/index.html  
+2021-09-07 00:07:26.891 +04:00 [INF] Request finished in 55.4091ms 200 text/html;charset=utf-8
+2021-09-07 00:07:27.000 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json  
+2021-09-07 00:07:27.070 +04:00 [INF] Request finished in 70.2017ms 200 application/json;charset=utf-8
+2021-09-07 00:07:27.226 +04:00 [INF] Received HTTP response headers after 1137.7632ms - 404
+2021-09-07 00:07:27.229 +04:00 [INF] End processing HTTP request after 1159.3178ms - 404
+2021-09-07 00:07:27.499 +04:00 [ERR] Newtonsoft.Json.JsonSerializationException: Error converting value 404 to type 'SeriousChallengeApi.Dtos.StockSymbolDto'. Path '', line 1, position 3.
+ ---> System.ArgumentException: Could not cast or convert from System.Int64 to SeriousChallengeApi.Dtos.StockSymbolDto.
+   at Newtonsoft.Json.Utilities.ConvertUtils.EnsureTypeAssignable(Object value, Type initialType, Type targetType)
+   at Newtonsoft.Json.Utilities.ConvertUtils.ConvertOrCast(Object initialValue, CultureInfo culture, Type targetType)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   --- End of inner exception stack trace ---
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at SeriousChallengeApi.Services.PolygonService.GetSymbolDatas(String symbolName, DateTime startDate, DateTime endDate) in D:\SeriousChallenge\SeriousChallengeApi\Services\PolygonService.cs:line 35
+   at SeriousChallengeApi.Jobs.UpdateSpyData.ExecuteAsync(CancellationToken stoppingToken) in D:\SeriousChallenge\SeriousChallengeApi\Jobs\UpdateSpyData.cs:line 51 is occured while executing WeeklyUpdateSPYJob.
+2021-09-07 00:08:14.812 +04:00 [INF] Starting up
+2021-09-07 00:08:15.931 +04:00 [INF] WeeklyUpdateSPY is started
+2021-09-07 00:08:16.229 +04:00 [INF] Start processing HTTP request GET "https://api.polygon.io/v2/aggs/ticker/SPY/range/1/day/8/30/2021/9/5/2021?apiKey=OrgNNJNl7CkI7W5UOdurGAMp0Ec1JENP"
+2021-09-07 00:08:16.244 +04:00 [INF] Sending HTTP request GET "https://api.polygon.io/v2/aggs/ticker/SPY/range/1/day/8/30/2021/9/5/2021?apiKey=OrgNNJNl7CkI7W5UOdurGAMp0Ec1JENP"
+2021-09-07 00:08:16.452 +04:00 [INF] Now listening on: http://localhost:5001
+2021-09-07 00:08:16.452 +04:00 [INF] Now listening on: http://localhost:5000
+2021-09-07 00:08:16.453 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-09-07 00:08:16.453 +04:00 [INF] Hosting environment: Development
+2021-09-07 00:08:16.453 +04:00 [INF] Content root path: D:\SeriousChallenge\SeriousChallengeApi
+2021-09-07 00:08:17.114 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/index.html  
+2021-09-07 00:08:17.168 +04:00 [INF] Request finished in 56.7693ms 200 text/html;charset=utf-8
+2021-09-07 00:08:17.269 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json  
+2021-09-07 00:08:17.342 +04:00 [INF] Request finished in 72.159ms 200 application/json;charset=utf-8
+2021-09-07 00:08:17.583 +04:00 [INF] Received HTTP response headers after 1336.7487ms - 404
+2021-09-07 00:08:17.585 +04:00 [INF] End processing HTTP request after 1365.4823ms - 404
+2021-09-07 00:08:17.849 +04:00 [ERR] Newtonsoft.Json.JsonSerializationException: Error converting value 404 to type 'SeriousChallengeApi.Dtos.StockSymbolDto'. Path '', line 1, position 3.
+ ---> System.ArgumentException: Could not cast or convert from System.Int64 to SeriousChallengeApi.Dtos.StockSymbolDto.
+   at Newtonsoft.Json.Utilities.ConvertUtils.EnsureTypeAssignable(Object value, Type initialType, Type targetType)
+   at Newtonsoft.Json.Utilities.ConvertUtils.ConvertOrCast(Object initialValue, CultureInfo culture, Type targetType)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   --- End of inner exception stack trace ---
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at SeriousChallengeApi.Services.PolygonService.GetSymbolDatas(String symbolName, DateTime startDate, DateTime endDate) in D:\SeriousChallenge\SeriousChallengeApi\Services\PolygonService.cs:line 35
+   at SeriousChallengeApi.Jobs.UpdateSpyData.ExecuteAsync(CancellationToken stoppingToken) in D:\SeriousChallenge\SeriousChallengeApi\Jobs\UpdateSpyData.cs:line 51 is occured while executing WeeklyUpdateSPYJob.
+2021-09-07 00:08:38.668 +04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5001/StockSymbol/Compare application/json 6
+2021-09-07 00:08:38.676 +04:00 [WRN] Failed to determine the https port for redirect.
+2021-09-07 00:08:38.697 +04:00 [INF] Executing endpoint 'SeriousChallengeApi.Controllers.StockSymbolController.Compare (SeriousChallengeApi)'
+2021-09-07 00:08:38.725 +04:00 [INF] Route matched with {action = "Compare", controller = "StockSymbol"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Compare(System.String) on controller SeriousChallengeApi.Controllers.StockSymbolController (SeriousChallengeApi).
+2021-09-07 00:08:38.770 +04:00 [INF] Executing action method SeriousChallengeApi.Controllers.StockSymbolController.Compare (SeriousChallengeApi) - Validation state: "Valid"
+2021-09-07 00:08:44.966 +04:00 [INF] Entity Framework Core 5.0.9 initialized 'EFContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-09-07 00:08:45.538 +04:00 [INF] Executed DbCommand (38ms) [Parameters=[@__lastMondayDate_0='?' (DbType = DateTime2), @__lastSundayDate_1='?' (DbType = DateTime2), @__symbolName_2='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Name], [s].[InfoDate], [s].[Price]
+FROM [StockSymbol] AS [s]
+WHERE (([s].[InfoDate] >= @__lastMondayDate_0) AND ([s].[InfoDate] < @__lastSundayDate_1)) AND ([s].[Name] = @__symbolName_2)
+2021-09-07 00:08:45.571 +04:00 [INF] Start processing HTTP request GET "https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2021-08-30/2021-09-05?apiKey=OrgNNJNl7CkI7W5UOdurGAMp0Ec1JENP"
+2021-09-07 00:08:45.571 +04:00 [INF] Sending HTTP request GET "https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2021-08-30/2021-09-05?apiKey=OrgNNJNl7CkI7W5UOdurGAMp0Ec1JENP"
+2021-09-07 00:08:45.808 +04:00 [INF] Received HTTP response headers after 236.7337ms - 200
+2021-09-07 00:08:45.808 +04:00 [INF] End processing HTTP request after 237.4317ms - 200
+2021-09-07 00:08:45.973 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 450), @p2='?' (DbType = Single), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (DbType = Single), @p6='?' (DbType = DateTime2), @p7='?' (Size = 450), @p8='?' (DbType = Single), @p9='?' (DbType = DateTime2), @p10='?' (Size = 450), @p11='?' (DbType = Single), @p12='?' (DbType = DateTime2), @p13='?' (Size = 450), @p14='?' (DbType = Single)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [StockSymbol] ([InfoDate], [Name], [Price])
+VALUES (@p0, @p1, @p2),
+(@p3, @p4, @p5),
+(@p6, @p7, @p8),
+(@p9, @p10, @p11),
+(@p12, @p13, @p14);
+2021-09-07 00:08:45.995 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__lastMondayDate_0='?' (DbType = DateTime2), @__lastSundayDate_1='?' (DbType = DateTime2), @__symbolName_2='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Name], [s].[InfoDate], [s].[Price]
+FROM [StockSymbol] AS [s]
+WHERE (([s].[InfoDate] >= @__lastMondayDate_0) AND ([s].[InfoDate] < @__lastSundayDate_1)) AND ([s].[Name] = @__symbolName_2)
+2021-09-07 00:08:47.339 +04:00 [INF] Executed action method SeriousChallengeApi.Controllers.StockSymbolController.Compare (SeriousChallengeApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8564.7267ms.
+2021-09-07 00:08:47.344 +04:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2021-09-07 00:08:47.350 +04:00 [INF] Executed action SeriousChallengeApi.Controllers.StockSymbolController.Compare (SeriousChallengeApi) in 8621.0031ms
+2021-09-07 00:08:47.350 +04:00 [INF] Executed endpoint 'SeriousChallengeApi.Controllers.StockSymbolController.Compare (SeriousChallengeApi)'
+2021-09-07 00:08:47.355 +04:00 [INF] Request finished in 8687.1409ms 200 application/json; charset=utf-8

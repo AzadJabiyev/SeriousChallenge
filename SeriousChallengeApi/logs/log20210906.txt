@@ -1,0 +1,496 @@
+2021-09-06 23:09:50.497 +04:00 [INF] Starting up
+2021-09-06 23:09:50.824 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-09-06 23:09:50.829 +04:00 [INF] Hosting environment: Development
+2021-09-06 23:09:50.830 +04:00 [INF] Content root path: D:\SeriousChallenge\SeriousChallengeApi
+2021-09-06 23:09:50.838 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/StockSymbol  
+2021-09-06 23:09:50.889 +04:00 [INF] Request finished in 54.1867ms 404 
+2021-09-06 23:09:53.299 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:09:53.329 +04:00 [INF] Request finished in 31.015ms 200 text/html;charset=utf-8
+2021-09-06 23:09:54.313 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/swagger/v1/swagger.json  
+2021-09-06 23:09:54.371 +04:00 [INF] Request finished in 58.2347ms 200 application/json;charset=utf-8
+2021-09-06 23:09:58.217 +04:00 [INF] Request starting HTTP/2.0 POST https://localhost:44368/StockSymbol/Compare application/json 8
+2021-09-06 23:09:58.222 +04:00 [INF] Executing endpoint 'SeriousChallengeApi.Controllers.StockSymbolController.Compare (SeriousChallengeApi)'
+2021-09-06 23:09:58.256 +04:00 [INF] Route matched with {action = "Compare", controller = "StockSymbol"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Compare(System.String, System.String) on controller SeriousChallengeApi.Controllers.StockSymbolController (SeriousChallengeApi).
+2021-09-06 23:09:58.814 +04:00 [INF] Entity Framework Core 5.0.9 initialized 'EFContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-09-06 23:09:59.259 +04:00 [INF] Executed DbCommand (36ms) [Parameters=[@__lastMondayDate_0='?' (DbType = DateTime2), @__lastSundayDate_1='?' (DbType = DateTime2), @__symbolName_2='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Name], [s].[InfoDate], [s].[Price]
+FROM [StockSymbol] AS [s]
+WHERE (([s].[InfoDate] >= @__lastMondayDate_0) AND ([s].[InfoDate] < @__lastSundayDate_1)) AND ([s].[Name] = @__symbolName_2)
+2021-09-06 23:09:59.296 +04:00 [INF] Start processing HTTP request GET "https://api.polygon.io/v2/aggs/ticker/string/range/1/day/2021-08-30/2021-09-05?apiKey="
+2021-09-06 23:09:59.297 +04:00 [INF] Sending HTTP request GET "https://api.polygon.io/v2/aggs/ticker/string/range/1/day/2021-08-30/2021-09-05?apiKey="
+2021-09-06 23:10:00.292 +04:00 [INF] Received HTTP response after 992.3105ms - "Unauthorized"
+2021-09-06 23:10:00.292 +04:00 [INF] End processing HTTP request after 999.8253ms - "Unauthorized"
+2021-09-06 23:10:00.379 +04:00 [INF] Operation is failed is exception: System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at SeriousChallengeApi.ControllerServices.StockSymbolControllerService.Compare(String symbolName, String apiKey) in D:\SeriousChallenge\SeriousChallengeApi\ControllerServices\StockSymbolControllerService.cs:line 64
+   at SeriousChallengeApi.Controllers.StockSymbolController.Compare(String symbolName, String apiKey) in D:\SeriousChallenge\SeriousChallengeApi\Controllers\StockSymbolController.cs:line 43
+2021-09-06 23:10:00.385 +04:00 [INF] Executed action SeriousChallengeApi.Controllers.StockSymbolController.Compare (SeriousChallengeApi) in 2125.406ms
+2021-09-06 23:10:00.385 +04:00 [INF] Executed endpoint 'SeriousChallengeApi.Controllers.StockSymbolController.Compare (SeriousChallengeApi)'
+2021-09-06 23:10:00.388 +04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at SeriousChallengeApi.ControllerServices.StockSymbolControllerService.Compare(String symbolName, String apiKey) in D:\SeriousChallenge\SeriousChallengeApi\ControllerServices\StockSymbolControllerService.cs:line 64
+   at SeriousChallengeApi.Controllers.StockSymbolController.Compare(String symbolName, String apiKey) in D:\SeriousChallenge\SeriousChallengeApi\Controllers\StockSymbolController.cs:line 43
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-09-06 23:10:00.397 +04:00 [INF] Request finished in 2181.2201ms 500 text/plain
+2021-09-06 23:10:31.601 +04:00 [INF] Starting up
+2021-09-06 23:10:31.888 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-09-06 23:10:31.891 +04:00 [INF] Hosting environment: Development
+2021-09-06 23:10:31.892 +04:00 [INF] Content root path: D:\SeriousChallenge\SeriousChallengeApi
+2021-09-06 23:10:31.899 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html/StockSymbol  
+2021-09-06 23:10:31.938 +04:00 [INF] Request finished in 40.5315ms 404 
+2021-09-06 23:10:46.185 +04:00 [INF] Starting up
+2021-09-06 23:10:46.471 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-09-06 23:10:46.473 +04:00 [INF] Hosting environment: Development
+2021-09-06 23:10:46.474 +04:00 [INF] Content root path: D:\SeriousChallenge\SeriousChallengeApi
+2021-09-06 23:10:46.481 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:46.506 +04:00 [INF] Request finished in 27.3018ms 301 
+2021-09-06 23:10:47.537 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.540 +04:00 [INF] Request finished in 2.8199ms 301 
+2021-09-06 23:10:47.542 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.543 +04:00 [INF] Request finished in 1.0019ms 301 
+2021-09-06 23:10:47.545 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.546 +04:00 [INF] Request finished in 0.7718ms 301 
+2021-09-06 23:10:47.547 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.547 +04:00 [INF] Request finished in 0.2209ms 301 
+2021-09-06 23:10:47.549 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.549 +04:00 [INF] Request finished in 0.1513ms 301 
+2021-09-06 23:10:47.550 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.550 +04:00 [INF] Request finished in 0.1691ms 301 
+2021-09-06 23:10:47.551 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.551 +04:00 [INF] Request finished in 0.1212ms 301 
+2021-09-06 23:10:47.552 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.552 +04:00 [INF] Request finished in 0.1578ms 301 
+2021-09-06 23:10:47.555 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.555 +04:00 [INF] Request finished in 0.2137ms 301 
+2021-09-06 23:10:47.556 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.556 +04:00 [INF] Request finished in 0.1648ms 301 
+2021-09-06 23:10:47.558 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.558 +04:00 [INF] Request finished in 0.1605ms 301 
+2021-09-06 23:10:47.559 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.559 +04:00 [INF] Request finished in 0.234ms 301 
+2021-09-06 23:10:47.560 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.561 +04:00 [INF] Request finished in 0.2051ms 301 
+2021-09-06 23:10:47.562 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.562 +04:00 [INF] Request finished in 0.1411ms 301 
+2021-09-06 23:10:47.563 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.563 +04:00 [INF] Request finished in 0.1987ms 301 
+2021-09-06 23:10:47.566 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.566 +04:00 [INF] Request finished in 0.3427ms 301 
+2021-09-06 23:10:47.568 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.568 +04:00 [INF] Request finished in 0.2168ms 301 
+2021-09-06 23:10:47.570 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.570 +04:00 [INF] Request finished in 0.2913ms 301 
+2021-09-06 23:10:47.572 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.572 +04:00 [INF] Request finished in 0.2635ms 301 
+2021-09-06 23:10:47.574 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:47.574 +04:00 [INF] Request finished in 0.2428ms 301 
+2021-09-06 23:10:50.049 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.050 +04:00 [INF] Request finished in 1.0832ms 301 
+2021-09-06 23:10:50.053 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.054 +04:00 [INF] Request finished in 1.1876ms 301 
+2021-09-06 23:10:50.055 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.056 +04:00 [INF] Request finished in 0.6936ms 301 
+2021-09-06 23:10:50.058 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.059 +04:00 [INF] Request finished in 1.0793ms 301 
+2021-09-06 23:10:50.061 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.061 +04:00 [INF] Request finished in 0.2563ms 301 
+2021-09-06 23:10:50.062 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.062 +04:00 [INF] Request finished in 0.116ms 301 
+2021-09-06 23:10:50.063 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.063 +04:00 [INF] Request finished in 0.11ms 301 
+2021-09-06 23:10:50.064 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.064 +04:00 [INF] Request finished in 0.1502ms 301 
+2021-09-06 23:10:50.066 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.066 +04:00 [INF] Request finished in 0.211ms 301 
+2021-09-06 23:10:50.067 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.068 +04:00 [INF] Request finished in 0.21ms 301 
+2021-09-06 23:10:50.069 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.070 +04:00 [INF] Request finished in 0.2955ms 301 
+2021-09-06 23:10:50.071 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.071 +04:00 [INF] Request finished in 0.1917ms 301 
+2021-09-06 23:10:50.073 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.073 +04:00 [INF] Request finished in 0.1509ms 301 
+2021-09-06 23:10:50.074 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.074 +04:00 [INF] Request finished in 0.1295ms 301 
+2021-09-06 23:10:50.075 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.075 +04:00 [INF] Request finished in 0.1368ms 301 
+2021-09-06 23:10:50.077 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.077 +04:00 [INF] Request finished in 0.1789ms 301 
+2021-09-06 23:10:50.078 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.078 +04:00 [INF] Request finished in 0.1768ms 301 
+2021-09-06 23:10:50.079 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.080 +04:00 [INF] Request finished in 0.178ms 301 
+2021-09-06 23:10:50.081 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.081 +04:00 [INF] Request finished in 0.2171ms 301 
+2021-09-06 23:10:50.083 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:10:50.083 +04:00 [INF] Request finished in 0.1218ms 301 
+2021-09-06 23:11:00.052 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.053 +04:00 [INF] Request finished in 0.9787ms 301 
+2021-09-06 23:11:00.054 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.055 +04:00 [INF] Request finished in 0.353ms 301 
+2021-09-06 23:11:00.056 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.056 +04:00 [INF] Request finished in 0.1612ms 301 
+2021-09-06 23:11:00.058 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.058 +04:00 [INF] Request finished in 0.1083ms 301 
+2021-09-06 23:11:00.059 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.059 +04:00 [INF] Request finished in 0.1242ms 301 
+2021-09-06 23:11:00.060 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.060 +04:00 [INF] Request finished in 0.1645ms 301 
+2021-09-06 23:11:00.062 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.062 +04:00 [INF] Request finished in 0.3378ms 301 
+2021-09-06 23:11:00.065 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.065 +04:00 [INF] Request finished in 0.2797ms 301 
+2021-09-06 23:11:00.067 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.067 +04:00 [INF] Request finished in 0.2259ms 301 
+2021-09-06 23:11:00.069 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.069 +04:00 [INF] Request finished in 0.2228ms 301 
+2021-09-06 23:11:00.071 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.071 +04:00 [INF] Request finished in 0.2273ms 301 
+2021-09-06 23:11:00.072 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.073 +04:00 [INF] Request finished in 0.1544ms 301 
+2021-09-06 23:11:00.074 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.074 +04:00 [INF] Request finished in 0.1821ms 301 
+2021-09-06 23:11:00.075 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.075 +04:00 [INF] Request finished in 0.1767ms 301 
+2021-09-06 23:11:00.077 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.077 +04:00 [INF] Request finished in 0.2182ms 301 
+2021-09-06 23:11:00.079 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.080 +04:00 [INF] Request finished in 0.2674ms 301 
+2021-09-06 23:11:00.082 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.082 +04:00 [INF] Request finished in 0.2012ms 301 
+2021-09-06 23:11:00.083 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.083 +04:00 [INF] Request finished in 0.1259ms 301 
+2021-09-06 23:11:00.084 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.085 +04:00 [INF] Request finished in 0.1137ms 301 
+2021-09-06 23:11:00.086 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:00.086 +04:00 [INF] Request finished in 0.1383ms 301 
+2021-09-06 23:11:04.820 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.821 +04:00 [INF] Request finished in 0.7045ms 301 
+2021-09-06 23:11:04.823 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.823 +04:00 [INF] Request finished in 0.7452ms 301 
+2021-09-06 23:11:04.825 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.826 +04:00 [INF] Request finished in 0.7203ms 301 
+2021-09-06 23:11:04.828 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.829 +04:00 [INF] Request finished in 0.5458ms 301 
+2021-09-06 23:11:04.830 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.831 +04:00 [INF] Request finished in 0.5969ms 301 
+2021-09-06 23:11:04.833 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.834 +04:00 [INF] Request finished in 0.5011ms 301 
+2021-09-06 23:11:04.835 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.835 +04:00 [INF] Request finished in 0.3595ms 301 
+2021-09-06 23:11:04.836 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.837 +04:00 [INF] Request finished in 0.384ms 301 
+2021-09-06 23:11:04.838 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.838 +04:00 [INF] Request finished in 0.3856ms 301 
+2021-09-06 23:11:04.839 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.840 +04:00 [INF] Request finished in 0.3566ms 301 
+2021-09-06 23:11:04.841 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.841 +04:00 [INF] Request finished in 0.2613ms 301 
+2021-09-06 23:11:04.842 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.843 +04:00 [INF] Request finished in 0.2899ms 301 
+2021-09-06 23:11:04.844 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.844 +04:00 [INF] Request finished in 0.3091ms 301 
+2021-09-06 23:11:04.846 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.846 +04:00 [INF] Request finished in 0.262ms 301 
+2021-09-06 23:11:04.847 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.847 +04:00 [INF] Request finished in 0.2362ms 301 
+2021-09-06 23:11:04.848 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.848 +04:00 [INF] Request finished in 0.2256ms 301 
+2021-09-06 23:11:04.850 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.850 +04:00 [INF] Request finished in 0.2842ms 301 
+2021-09-06 23:11:04.851 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.852 +04:00 [INF] Request finished in 0.2558ms 301 
+2021-09-06 23:11:04.853 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.853 +04:00 [INF] Request finished in 0.1103ms 301 
+2021-09-06 23:11:04.854 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:04.854 +04:00 [INF] Request finished in 0.1005ms 301 
+2021-09-06 23:11:05.879 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.880 +04:00 [INF] Request finished in 0.7261ms 301 
+2021-09-06 23:11:05.882 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.882 +04:00 [INF] Request finished in 0.2033ms 301 
+2021-09-06 23:11:05.884 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.884 +04:00 [INF] Request finished in 0.1141ms 301 
+2021-09-06 23:11:05.885 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.885 +04:00 [INF] Request finished in 0.1248ms 301 
+2021-09-06 23:11:05.886 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.886 +04:00 [INF] Request finished in 0.1691ms 301 
+2021-09-06 23:11:05.887 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.887 +04:00 [INF] Request finished in 0.1006ms 301 
+2021-09-06 23:11:05.888 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.888 +04:00 [INF] Request finished in 0.0899ms 301 
+2021-09-06 23:11:05.889 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.889 +04:00 [INF] Request finished in 0.0895ms 301 
+2021-09-06 23:11:05.891 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.891 +04:00 [INF] Request finished in 0.1123ms 301 
+2021-09-06 23:11:05.892 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.892 +04:00 [INF] Request finished in 0.098ms 301 
+2021-09-06 23:11:05.893 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.893 +04:00 [INF] Request finished in 0.1583ms 301 
+2021-09-06 23:11:05.894 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.895 +04:00 [INF] Request finished in 0.1137ms 301 
+2021-09-06 23:11:05.896 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.896 +04:00 [INF] Request finished in 0.1901ms 301 
+2021-09-06 23:11:05.898 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.898 +04:00 [INF] Request finished in 0.1343ms 301 
+2021-09-06 23:11:05.900 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.900 +04:00 [INF] Request finished in 0.2267ms 301 
+2021-09-06 23:11:05.902 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.902 +04:00 [INF] Request finished in 0.1932ms 301 
+2021-09-06 23:11:05.904 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.904 +04:00 [INF] Request finished in 0.2857ms 301 
+2021-09-06 23:11:05.906 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.906 +04:00 [INF] Request finished in 0.2538ms 301 
+2021-09-06 23:11:05.908 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.908 +04:00 [INF] Request finished in 0.2064ms 301 
+2021-09-06 23:11:05.909 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:05.909 +04:00 [INF] Request finished in 0.1351ms 301 
+2021-09-06 23:11:10.925 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.926 +04:00 [INF] Request finished in 0.4692ms 301 
+2021-09-06 23:11:10.928 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.928 +04:00 [INF] Request finished in 0.2106ms 301 
+2021-09-06 23:11:10.930 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.930 +04:00 [INF] Request finished in 0.2472ms 301 
+2021-09-06 23:11:10.931 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.932 +04:00 [INF] Request finished in 0.1604ms 301 
+2021-09-06 23:11:10.933 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.933 +04:00 [INF] Request finished in 0.1498ms 301 
+2021-09-06 23:11:10.934 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.935 +04:00 [INF] Request finished in 0.1644ms 301 
+2021-09-06 23:11:10.936 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.936 +04:00 [INF] Request finished in 0.1535ms 301 
+2021-09-06 23:11:10.938 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.938 +04:00 [INF] Request finished in 0.208ms 301 
+2021-09-06 23:11:10.939 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.940 +04:00 [INF] Request finished in 0.1905ms 301 
+2021-09-06 23:11:10.942 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.942 +04:00 [INF] Request finished in 0.1923ms 301 
+2021-09-06 23:11:10.944 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.944 +04:00 [INF] Request finished in 0.3752ms 301 
+2021-09-06 23:11:10.946 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.947 +04:00 [INF] Request finished in 0.2058ms 301 
+2021-09-06 23:11:10.949 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.949 +04:00 [INF] Request finished in 0.2325ms 301 
+2021-09-06 23:11:10.950 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.951 +04:00 [INF] Request finished in 0.2241ms 301 
+2021-09-06 23:11:10.952 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.952 +04:00 [INF] Request finished in 0.1769ms 301 
+2021-09-06 23:11:10.954 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.954 +04:00 [INF] Request finished in 0.2891ms 301 
+2021-09-06 23:11:10.956 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.957 +04:00 [INF] Request finished in 0.3635ms 301 
+2021-09-06 23:11:10.959 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.959 +04:00 [INF] Request finished in 0.1888ms 301 
+2021-09-06 23:11:10.960 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.960 +04:00 [INF] Request finished in 0.1978ms 301 
+2021-09-06 23:11:10.962 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/index.html  
+2021-09-06 23:11:10.962 +04:00 [INF] Request finished in 0.2735ms 301 
+2021-09-06 23:11:13.102 +04:00 [INF] Starting up
+2021-09-06 23:11:13.417 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-09-06 23:11:13.420 +04:00 [INF] Hosting environment: Development
+2021-09-06 23:11:13.421 +04:00 [INF] Content root path: D:\SeriousChallenge\SeriousChallengeApi
+2021-09-06 23:11:13.431 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/StockSymbol  
+2021-09-06 23:11:13.474 +04:00 [INF] Request finished in 46.7436ms 404 
+2021-09-06 23:11:17.224 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/favicon.ico  
+2021-09-06 23:11:17.227 +04:00 [INF] Request finished in 3.4049ms 404 
+2021-09-06 23:11:31.257 +04:00 [INF] Starting up
+2021-09-06 23:11:31.541 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-09-06 23:11:31.545 +04:00 [INF] Hosting environment: Development
+2021-09-06 23:11:31.545 +04:00 [INF] Content root path: D:\SeriousChallenge\SeriousChallengeApi
+2021-09-06 23:11:31.552 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/StockSymbol  
+2021-09-06 23:11:31.587 +04:00 [INF] Request finished in 38.0701ms 404 
+2021-09-06 23:11:50.141 +04:00 [INF] Starting up
+2021-09-06 23:11:50.970 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-09-06 23:11:50.973 +04:00 [INF] Hosting environment: Development
+2021-09-06 23:11:50.973 +04:00 [INF] Content root path: D:\SeriousChallenge\SeriousChallengeApi
+2021-09-06 23:11:50.981 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/StockSymbol  
+2021-09-06 23:11:51.019 +04:00 [INF] Request finished in 41.0096ms 404 
+2021-09-06 23:13:36.786 +04:00 [INF] Starting up
+2021-09-06 23:13:37.103 +04:00 [INF] Now listening on: https://localhost:5001
+2021-09-06 23:13:37.105 +04:00 [INF] Now listening on: http://localhost:5000
+2021-09-06 23:13:37.105 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-09-06 23:13:37.105 +04:00 [INF] Hosting environment: Development
+2021-09-06 23:13:37.105 +04:00 [INF] Content root path: D:\SeriousChallenge\SeriousChallengeApi
+2021-09-06 23:13:43.815 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/StockSymbol  
+2021-09-06 23:13:43.849 +04:00 [INF] Request finished in 35.9553ms 404 
+2021-09-06 23:13:47.134 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/index.html  
+2021-09-06 23:13:47.157 +04:00 [INF] Request finished in 23.3347ms 200 text/html;charset=utf-8
+2021-09-06 23:13:47.179 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger-ui-bundle.js  
+2021-09-06 23:13:47.179 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger-ui.css  
+2021-09-06 23:13:47.179 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger-ui-standalone-preset.js  
+2021-09-06 23:13:47.190 +04:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-09-06 23:13:47.190 +04:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-09-06 23:13:47.190 +04:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-09-06 23:13:47.191 +04:00 [INF] Request finished in 12.1457ms 200 text/css
+2021-09-06 23:13:47.191 +04:00 [INF] Request finished in 12.1457ms 200 application/javascript
+2021-09-06 23:13:47.191 +04:00 [INF] Request finished in 12.1457ms 200 application/javascript
+2021-09-06 23:13:47.323 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json  
+2021-09-06 23:13:47.340 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon-32x32.png  
+2021-09-06 23:13:47.341 +04:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2021-09-06 23:13:47.341 +04:00 [INF] Request finished in 0.554ms 200 image/png
+2021-09-06 23:13:47.375 +04:00 [INF] Request finished in 51.4265ms 200 application/json;charset=utf-8
+2021-09-06 23:13:54.688 +04:00 [INF] Application is shutting down...
+2021-09-06 23:14:13.962 +04:00 [INF] Starting up
+2021-09-06 23:14:14.253 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-09-06 23:14:14.256 +04:00 [INF] Hosting environment: Development
+2021-09-06 23:14:14.257 +04:00 [INF] Content root path: D:\SeriousChallenge\SeriousChallengeApi
+2021-09-06 23:14:14.264 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44368/StockSymbol  
+2021-09-06 23:14:14.303 +04:00 [INF] Request finished in 41.7171ms 404 
+2021-09-06 23:14:42.960 +04:00 [INF] Starting up
+2021-09-06 23:14:43.285 +04:00 [INF] Now listening on: https://localhost:5001
+2021-09-06 23:14:43.287 +04:00 [INF] Now listening on: http://localhost:5000
+2021-09-06 23:14:43.287 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-09-06 23:14:43.287 +04:00 [INF] Hosting environment: Development
+2021-09-06 23:14:43.287 +04:00 [INF] Content root path: D:\SeriousChallenge\SeriousChallengeApi
+2021-09-06 23:15:08.084 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/index.html  
+2021-09-06 23:15:08.123 +04:00 [INF] Request finished in 41.3668ms 200 text/html;charset=utf-8
+2021-09-06 23:15:08.142 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger-ui-standalone-preset.js  
+2021-09-06 23:15:08.142 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger-ui.css  
+2021-09-06 23:15:08.142 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger-ui-bundle.js  
+2021-09-06 23:15:08.153 +04:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-09-06 23:15:08.153 +04:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-09-06 23:15:08.153 +04:00 [INF] Request finished in 11.1049ms 200 application/javascript
+2021-09-06 23:15:08.153 +04:00 [INF] Request finished in 11.1043ms 200 text/css
+2021-09-06 23:15:08.154 +04:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-09-06 23:15:08.154 +04:00 [INF] Request finished in 12.0107ms 200 application/javascript
+2021-09-06 23:15:08.278 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json  
+2021-09-06 23:15:08.292 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon-32x32.png  
+2021-09-06 23:15:08.292 +04:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2021-09-06 23:15:08.293 +04:00 [INF] Request finished in 0.5202ms 200 image/png
+2021-09-06 23:15:08.326 +04:00 [INF] Request finished in 47.907ms 200 application/json;charset=utf-8
+2021-09-06 23:15:11.153 +04:00 [INF] Application is shutting down...
+2021-09-06 23:16:01.868 +04:00 [INF] Starting up
+2021-09-06 23:16:02.167 +04:00 [INF] Now listening on: https://localhost:5001
+2021-09-06 23:16:02.169 +04:00 [INF] Now listening on: http://localhost:5000
+2021-09-06 23:16:02.169 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-09-06 23:16:02.169 +04:00 [INF] Hosting environment: Development
+2021-09-06 23:16:02.169 +04:00 [INF] Content root path: D:\SeriousChallenge\SeriousChallengeApi
+2021-09-06 23:16:02.391 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/index.html  
+2021-09-06 23:16:02.452 +04:00 [INF] Request finished in 63.2662ms 200 text/html;charset=utf-8
+2021-09-06 23:16:02.483 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger-ui-bundle.js  
+2021-09-06 23:16:02.483 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger-ui-standalone-preset.js  
+2021-09-06 23:16:02.483 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger-ui.css  
+2021-09-06 23:16:02.505 +04:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-09-06 23:16:02.505 +04:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-09-06 23:16:02.506 +04:00 [INF] Request finished in 22.8501ms 200 application/javascript
+2021-09-06 23:16:02.506 +04:00 [INF] Request finished in 22.9139ms 200 text/css
+2021-09-06 23:16:02.524 +04:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-09-06 23:16:02.527 +04:00 [INF] Request finished in 44.0182ms 200 application/javascript
+2021-09-06 23:16:02.653 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json  
+2021-09-06 23:16:02.707 +04:00 [INF] Request finished in 54.1285ms 200 application/json;charset=utf-8
+2021-09-06 23:16:14.446 +04:00 [INF] Application is shutting down...
+2021-09-06 23:16:22.493 +04:00 [INF] Starting up
+2021-09-06 23:16:22.773 +04:00 [INF] Now listening on: http://localhost:5001
+2021-09-06 23:16:22.775 +04:00 [INF] Now listening on: http://localhost:5000
+2021-09-06 23:16:22.775 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-09-06 23:16:22.775 +04:00 [INF] Hosting environment: Development
+2021-09-06 23:16:22.775 +04:00 [INF] Content root path: D:\SeriousChallenge\SeriousChallengeApi
+2021-09-06 23:16:22.967 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/index.html  
+2021-09-06 23:16:23.025 +04:00 [INF] Request finished in 61.5425ms 200 text/html;charset=utf-8
+2021-09-06 23:16:23.049 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger-ui-standalone-preset.js  
+2021-09-06 23:16:23.049 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger-ui-bundle.js  
+2021-09-06 23:16:23.055 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger-ui.css  
+2021-09-06 23:16:23.086 +04:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-09-06 23:16:23.086 +04:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-09-06 23:16:23.087 +04:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-09-06 23:16:23.090 +04:00 [INF] Request finished in 41.3962ms 200 application/javascript
+2021-09-06 23:16:23.090 +04:00 [INF] Request finished in 34.9992ms 200 text/css
+2021-09-06 23:16:23.090 +04:00 [INF] Request finished in 41.4818ms 200 application/javascript
+2021-09-06 23:16:23.223 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json  
+2021-09-06 23:16:23.239 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/favicon-32x32.png  
+2021-09-06 23:16:23.239 +04:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2021-09-06 23:16:23.239 +04:00 [INF] Request finished in 0.3746ms 200 image/png
+2021-09-06 23:16:23.276 +04:00 [INF] Request finished in 52.2833ms 200 application/json;charset=utf-8
+2021-09-06 23:16:29.322 +04:00 [INF] Application is shutting down...
+2021-09-06 23:23:05.379 +04:00 [INF] Starting up
+2021-09-06 23:23:05.775 +04:00 [INF] Now listening on: http://localhost:5001
+2021-09-06 23:23:05.777 +04:00 [INF] Now listening on: http://localhost:5000
+2021-09-06 23:23:05.777 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-09-06 23:23:05.777 +04:00 [INF] Hosting environment: Development
+2021-09-06 23:23:05.777 +04:00 [INF] Content root path: D:\SeriousChallenge\SeriousChallengeApi
+2021-09-06 23:23:06.290 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/index.html  
+2021-09-06 23:23:06.347 +04:00 [INF] Request finished in 60.667ms 200 text/html;charset=utf-8
+2021-09-06 23:23:06.544 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json  
+2021-09-06 23:23:06.600 +04:00 [INF] Request finished in 55.8012ms 200 application/json;charset=utf-8
+2021-09-06 23:23:13.131 +04:00 [INF] Application is shutting down...
+2021-09-06 23:56:42.455 +04:00 [INF] Starting up
+2021-09-06 23:56:43.783 +04:00 [FTL] Application start-up failed
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: SeriousChallengeApi.ControllerServices.IStockSymbolControllerService Lifetime: Transient ImplementationType: SeriousChallengeApi.ControllerServices.StockSymbolControllerService': Unable to resolve service for type 'SeriousChallengeApi.Services.PolygonService' while attempting to activate 'SeriousChallengeApi.ControllerServices.StockSymbolControllerService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: SeriousChallengeApi.ControllerServices.IStockSymbolControllerService Lifetime: Transient ImplementationType: SeriousChallengeApi.ControllerServices.StockSymbolControllerService': Unable to resolve service for type 'SeriousChallengeApi.Services.PolygonService' while attempting to activate 'SeriousChallengeApi.ControllerServices.StockSymbolControllerService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'SeriousChallengeApi.Services.PolygonService' while attempting to activate 'SeriousChallengeApi.ControllerServices.StockSymbolControllerService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at SeriousChallengeApi.Program.Main(String[] args) in D:\SeriousChallenge\SeriousChallengeApi\Program.cs:line 31
+2021-09-06 23:57:14.558 +04:00 [INF] Starting up
+2021-09-06 23:57:15.829 +04:00 [FTL] Application start-up failed
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: SeriousChallengeApi.ControllerServices.IStockSymbolControllerService Lifetime: Transient ImplementationType: SeriousChallengeApi.ControllerServices.StockSymbolControllerService': Unable to resolve service for type 'SeriousChallengeApi.Services.PolygonService' while attempting to activate 'SeriousChallengeApi.ControllerServices.StockSymbolControllerService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: SeriousChallengeApi.ControllerServices.IStockSymbolControllerService Lifetime: Transient ImplementationType: SeriousChallengeApi.ControllerServices.StockSymbolControllerService': Unable to resolve service for type 'SeriousChallengeApi.Services.PolygonService' while attempting to activate 'SeriousChallengeApi.ControllerServices.StockSymbolControllerService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'SeriousChallengeApi.Services.PolygonService' while attempting to activate 'SeriousChallengeApi.ControllerServices.StockSymbolControllerService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at SeriousChallengeApi.Program.Main(String[] args) in D:\SeriousChallenge\SeriousChallengeApi\Program.cs:line 31
+2021-09-06 23:59:25.885 +04:00 [INF] Starting up
+2021-09-06 23:59:27.156 +04:00 [FTL] Application start-up failed
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Microsoft.Extensions.Hosting.IHostedService Lifetime: Singleton ImplementationType: SeriousChallengeApi.Jobs.UpdateSpyData': Cannot consume scoped service 'SeriousChallenge.Infrastructure.EFContext' from singleton 'Microsoft.Extensions.Hosting.IHostedService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Microsoft.Extensions.Hosting.IHostedService Lifetime: Singleton ImplementationType: SeriousChallengeApi.Jobs.UpdateSpyData': Cannot consume scoped service 'SeriousChallenge.Infrastructure.EFContext' from singleton 'Microsoft.Extensions.Hosting.IHostedService'.
+ ---> System.InvalidOperationException: Cannot consume scoped service 'SeriousChallenge.Infrastructure.EFContext' from singleton 'Microsoft.Extensions.Hosting.IHostedService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitScopeCache(ServiceCallSite scopedCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitConstructor(ConstructorCallSite constructorCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitDisposeCache(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitConstructor(ConstructorCallSite constructorCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitRootCache(ServiceCallSite singletonCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.ValidateCallSite(ServiceCallSite callSite)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.Microsoft.Extensions.DependencyInjection.ServiceLookup.IServiceProviderEngineCallback.OnCreate(ServiceCallSite callSite)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, IServiceProviderEngine engine, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at SeriousChallengeApi.Program.Main(String[] args) in D:\SeriousChallenge\SeriousChallengeApi\Program.cs:line 31
